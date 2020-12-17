@@ -1,0 +1,53 @@
+<!doctype>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+    <title>GASPILAND - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+   
+   
+
+    <body>
+        <div id="app">
+          <header>
+            <header>
+              <div class="wrapper">
+                  <div class="logo">
+                      <h1>GASPILAND</h1>
+                  </div>
+                  <ul class="nav-area">
+                      <li><a href="Deuxiemepage.html">Le gaspillage alimentaire</a></li>
+                      <li><router-link to='/register'>S'enregistrer</router-link></li>
+                      <li><a href="#">Donner</a></li>
+                      <li><a href="#">Recevoir</a></li>
+                  </ul>
+              </div>
+              <div class="welcome-text">
+                  <h1>
+                      Commencer à réduire le gaspillage avec <span>Gaspiland</span></h1>
+                  <router-link to='/login'>Connexion</router-link>
+              </div>
+          </header>
+
+
+
+          <main>
+            <router-view
+              @enregistrer='enregistrer'
+              @login-user='loginUser'
+            ></router-view>
+          </main>
+
+
+
+          
+        </div>
+        <script src="/vue-application.js"></script>
+    </body>
+</html>
+

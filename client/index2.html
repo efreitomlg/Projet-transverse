@@ -1,0 +1,77 @@
+<!doctype>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Page 2</title>
+        <!-- Load Vue followed by Vue Router -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <header>
+            <h1 class="gros-titre">Joyeux Noël à tous les enfants sages !!!</h1>
+            <nav>
+              <div class="nav-menu2">
+                <ul class="nav-menu2-list">
+                  <li class="nav-list-item2"><router-link to='/liste'>Oh ! Oh ! Oh !</router-link></li>
+                  <li class="nav-list-item2"><router-link to='/catalogue'>Catalogue</router-link></li>
+                </ul>
+              </div>              
+            </nav>
+            <h2>Composez votre liste, ajoutez des objets, supprimez en à volonté ( C'est noël, mieux vaut en ajouter je pense )</h2>
+          </header>
+          <main>
+            <router-view
+              :articles="articles"
+              :panier="panier"
+              @add-article="addArticle"
+              @delete-article="deleteArticle"
+              @update-article="updateArticle"
+              @add-to-panier= "addToPanier"
+            ></router-view>
+          </main>
+        </div>
+        <script src="/vue-application.js"></script>
+    </body>
+</html>
+
+<style>
+
+    h2{
+        color:azure;
+    }
+
+html{
+  background-image: url(https://www.teahub.io/photos/full/208-2088976_xmas-stuff-for-christmas-gifts-wallpaper-christmas-gift.jpg  );
+}
+
+.gros-titre{
+  font-family: cursive;
+  color: white;
+  margin-left: 300px;
+}
+
+.nav-menu2-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+  color: rgb(15, 15, 15);
+}
+.nav-menu2-list li {
+  width: 50%;
+  text-align: center;
+  background: rgb(201, 201, 201);
+  opacity: 0.7;
+  padding: 10px 0;
+  cursor: pointer;
+  transition:  300ms ease-in-out;
+}
+.nav-menu2-list li:hover {
+  background: rgb(177, 177, 177);
+  color:aliceblue;
+}
+</style>
