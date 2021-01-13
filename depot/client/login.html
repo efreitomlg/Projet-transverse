@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GASPILAND - Connexion</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style_login.css">
+</head>
+
+<body>
+    <div id="app">
+
+    <div class="body"></div>
+    <div class="grad">
+        <ul class="nav-area">
+            <li><a href="index.html">Le gaspillage alimentaire</a></li>
+            <li><a href="Quisommesnous.html">Qui sommes-nous ?</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <div><span>GASPILAND</span></div>
+    </div>
+    <br>
+    <div class="login">
+        <button class="button"><router-link to='/login'>Connexion</router-link></button>
+    </div>
+ 
+    
+
+    <main>
+        <router-view
+          @enregistrer='enregistrer'
+          @login-user='loginUser'
+        ></router-view>
+      </main>
+    </div>
+      <script src="vue-application.js">
+    </script>
+
+</body>
+
+</html>
+
+<style>
+    .header{
+        text-shadow:0 0 2px #FFD100,0 0 30px #FFD100,0px 0px 5px #FFD100, 0 0 150px #FFD100;color:#FFD100;
+background-color:transparent;
+    }
+
+    .login{
+        margin-top: 30px;
+    
+    }
+    .button {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #e4e1e1;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    }
+
+    .button:hover {
+background: #d1d0d0;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+cursor: pointer;
+}
+
+
+</style>

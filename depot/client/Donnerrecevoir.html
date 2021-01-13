@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Partagez</title>
+        <link rel="stylesheet" href="Donnerrecevoir.css">
+        <!-- Load Vue followed by Vue Router -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    </head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>
+               <a href="#menu">Utiliser Gaspiland</a>
+            </h1>
+               
+           <div class="popover" id="menu">
+            <div class = 'content'>
+             <a href="#" class="close"></a>
+              <div class = 'nav'>
+               <ul class = 'nav_list'>
+                 
+                 <div class = 'nav_list_item'>
+                 <li><a href="#"><router-link to="/invente">Je donne !</router-link></a></li>
+                 </div>
+                <div class = 'nav_list_item'>
+                   <li><a href="#">Où nous trouver ?</a></li>
+                 </div>
+               <div class = 'nav_list_item'>
+                 <li><a href="#">Les dons disponibles</a></li>
+                 </div>
+                <div class = 'nav_list_item'>
+                   <li><a href="https://agriculture.gouv.fr/la-france-pionniere-de-la-lutte-contre-le-gaspillage-alimentaire">L'état s'engage</a></li>
+                 </div>
+                 
+               </ul>
+             </div>
+            </div>
+            </div>
+            </div>
+           
+
+        <router-view
+        :jouets="jouets"
+        @add-article="addArticle"
+        @delete-article="deleteArticle"
+        @update-article="updateArticle"
+        @add-to-panier= "addToPanier"
+        @signal="AjoutInvention"
+        @retrieve-tab="retrievetab"
+      ></router-view>
+
+
+
+    </div>
+   
+
+            <script src="/vue-application.js"></script>
+</body>
+</html>

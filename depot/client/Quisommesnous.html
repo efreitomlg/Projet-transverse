@@ -1,0 +1,85 @@
+<!doctype>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Qui sommes nous ?</title>
+        <!-- Load Vue followed by Vue Router -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <header>
+            <h1 class="gros-titre">Mettre fin à la famine ?</h1>
+            <nav>
+              <div class="nav-menu2">
+                <ul class="nav-menu2-list">
+                  <li class="nav-list-item2"><a href="index.html">Retour à l'accueil</a></li>
+                  <li class="nav-list-item2"><a href="#">Nous contacter</a></li>
+                </ul>
+              </div>              
+            </nav>
+            <h2>Nous sommes un groupe d'étudiants ayant pour projet de transformer le gaspillage en partage</h2>
+            <h2>Composé de nous 5 : Sofiane, Tom, Armel, Paul et Louis, ce groupe de projet proposera une plateforme</h2>
+            <h2>d'échange entre donneurs et receveurs, ainsi ce qui devait être jeté ne le sera plus.</h2>
+          </header>
+          <main>
+            <router-view
+              :articles="articles"
+              :panier="panier"
+              @add-article="addArticle"
+              @delete-article="deleteArticle"
+              @update-article="updateArticle"
+              @add-to-panier= "addToPanier"
+            ></router-view>
+          </main>
+        </div>
+        <script src="/vue-application.js"></script>
+    </body>
+</html>
+
+<style>
+    *{
+        font-family: cursive;
+    }
+    
+
+    h2{
+        color:rgb(239, 255, 255);
+    }
+
+html{
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+.gros-titre{
+  font-family: cursive;
+  color: white;
+  margin-left: 450px;
+  text-shadow:0 0 2px #cac199,0 0 30px #dfd6b1,0px 0px 5px #7c7b76, 0 0 150px #a88f21;color:#a08e3c;
+background-color:transparent;
+}
+
+.nav-menu2-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+  color: rgb(15, 15, 15);
+}
+.nav-menu2-list li {
+  width: 50%;
+  text-align: center;
+  background: rgb(201, 201, 201);
+  opacity: 0.7;
+  padding: 10px 0;
+  cursor: pointer;
+  transition:  300ms ease-in-out;
+}
+.nav-menu2-list li:hover {
+  background: rgb(177, 177, 177);
+  color:aliceblue;
+}
+</style>
